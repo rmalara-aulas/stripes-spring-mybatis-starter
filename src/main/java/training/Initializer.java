@@ -27,7 +27,7 @@ public @Slf4j class Initializer implements WebApplicationInitializer {
         servletContext.setInitParameter("javax.servlet.jsp.jstl.fmt.localizationContext", "StripesResources");
 
         val rootContext = new AnnotationConfigWebApplicationContext();
-        rootContext.scan("initializer");
+        rootContext.scan("training");
 
         servletContext.addListener(new ContextLoaderListener(rootContext));
 
