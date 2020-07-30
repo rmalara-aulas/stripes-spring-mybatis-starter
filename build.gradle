@@ -7,7 +7,7 @@ plugins {
 
 wrapper {
     distributionType = Wrapper.DistributionType.ALL
-    gradleVersion = '5.3'
+    gradleVersion = '6.5'
 }
 
 ext {
@@ -22,7 +22,7 @@ sourceCompatibility = 11
 targetCompatibility = 11
 
 repositories {
-    maven { url 'http://192.168.1.90:8081/artifactory/maven' }
+    maven { url 'http://server.delivoro.com.br:8081/artifactory/maven' }
 }
 
 lombok {
