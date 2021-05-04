@@ -57,10 +57,10 @@ dependencies {
     // Web
     implementation 'net.sourceforge.stripes:stripes:1.6.0'
     implementation 'displaytag:displaytag:1.2'
-    implementation 'taglibs:standard:1.1.2'
-    implementation 'javax.servlet.jsp.jstl:javax.servlet.jsp.jstl-api:1.2.2'
-    implementation 'javax.servlet.jsp:javax.servlet.jsp-api:2.3.3'
-    implementation 'javax.servlet:javax.servlet-api:4.0.1'
+
+    compileOnly group: 'javax.servlet', name: 'javax.servlet-api', version: '4.0.1'
+    compileOnly group: 'javax.servlet.jsp', name: 'jsp-api', version: '2.1'
+    implementation group: 'org.glassfish.web', name: 'jakarta.servlet.jsp.jstl', version: '1.2.6'
 
     // Logging
     implementation 'ch.qos.logback:logback-classic:1.2.3'
