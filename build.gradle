@@ -23,11 +23,10 @@ targetCompatibility = 11
 
 repositories {
     maven {
-        url = "http://server.delivoro.com.br:8081/artifactory/maven"
-        allowInsecureProtocol = true
+        url 'https://delivoro-387205484486.d.codeartifact.us-east-1.amazonaws.com/maven/delivoro/'
         credentials {
-            username = 'delivoro'
-            password = 'ezHATKjgr2cwjER'
+            username "aws"
+            password System.env.CODEARTIFACT_AUTH_TOKEN
         }
     }
 }
