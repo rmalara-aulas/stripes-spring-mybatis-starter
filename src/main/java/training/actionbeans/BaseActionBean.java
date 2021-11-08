@@ -5,6 +5,7 @@ import lombok.Getter;
 import lombok.Setter;
 import net.sourceforge.stripes.action.ActionBean;
 import net.sourceforge.stripes.action.ActionBeanContext;
+import net.sourceforge.stripes.action.SimpleMessage;
 import net.sourceforge.stripes.validation.SimpleError;
 
 /**
@@ -23,8 +24,20 @@ public abstract class BaseActionBean implements ActionBean {
      * @param msg       String com a mensagem de erro
      * @param parameter parametros (opcional)
      */
-    public void addSimpleErrorMessage(String msg, Object... parameter) {
+    protected void addSimpleErrorMessage(String msg, Object... parameter) {
         getContext().getValidationErrors().addGlobalError(
             new SimpleError(msg, parameter));
+    }
+
+    /**
+     * Adiciona uma mensagem informativa no contexto do Stripes.
+     *
+     * @param msg
+     *          Mensagem.
+     * @param parameter
+     *          parametros (opcional).
+     */
+    protected void addMessage(String msg, Object... parameter) {
+        getContext().getMessages().add(new SimpleMessage(msg, parameter));
     }
 }
