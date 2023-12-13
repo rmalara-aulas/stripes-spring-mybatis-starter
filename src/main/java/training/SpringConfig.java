@@ -23,7 +23,7 @@ import lombok.val;
  */
 @Configuration
 public class SpringConfig {
-    
+
     public static @Bean MapperScannerConfigurer mapperScannerConfigurer() {
 		val configurer = new MapperScannerConfigurer();
 		configurer.setBasePackage("training.mapper");
@@ -42,16 +42,17 @@ public class SpringConfig {
 	public @Bean DataSourceTransactionManager txManager(DataSource dataSource) {
 		return new DataSourceTransactionManager(dataSource);
 	}
-	
+
 	public @Bean DataSource dataSource() throws SQLException {
 
         val source = new MysqlDataSource();
         source.setServerName("localhost");
         source.setPort(3306);
-        source.setDatabaseName("training");
+        source.setDatabaseName("starter");
         source.setUser("root");
-        source.setPassword("root");
+        source.setPassword("1234");
         source.setUseSSL(false);
+        source.setServerTimezone("GMT-3");
 
         return source;
     }

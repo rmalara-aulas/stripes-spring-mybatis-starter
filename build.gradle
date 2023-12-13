@@ -22,14 +22,8 @@ sourceCompatibility = 11
 targetCompatibility = 11
 
 repositories {
-    maven {
-        url = 'http://server.delivoro.com.br:8081/artifactory/virtual'
-        allowInsecureProtocol = true
-        credentials {
-            username = System.env.ARTIFACTORY_USERNAME
-            password = System.env.ARTIFACTORY_PASSWORD
-        }
-    }
+    mavenLocal()
+    mavenCentral()
 }
 
 lombok {

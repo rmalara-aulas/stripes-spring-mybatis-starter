@@ -1,33 +1,61 @@
-# Starter - Projeto para conhecer as tecnologias do sistema
+# Starter
 
 ## Requisitos e recomendações
 
-- [Open JDK 11](https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.8%2B10/OpenJDK11U-jdk_x64_linux_hotspot_11.0.8_10.tar.gz)
-- [Eclipe 2019-12](https://www.eclipse.org/downloads/packages/release/2019-12/r/eclipse-ide-enterprise-java-developers)
-- [Lombok](https://projectlombok.org/downloads/lombok.jar)
-- [TomCat 9.0.30](https://archive.apache.org/dist/tomcat/tomcat-9/v9.0.30/bin/apache-tomcat-9.0.30.zip)
+- JDK 11 ou 13 - esse projeto nao foi testado com versoes superiores, mas deve funcionar
+- IntelliJ
+- MySQL
 
-## Passo a passo
-Certifique-se que a variavel de ambiente JAVA_HOME esteja com o Java 11 e que o projeto esteja clonado corretamente em seu workspace e veja tambem se os plugins como o Lombok, BuildShip e editorConfig estejam instalados em seu eclipse
-1. Através do terminal, acesse o diretório raiz do projeto `/starter` e execute:
-    ```./gradlew build```
 
-2. Tenha certeza que a menssagem `build successful` tenha aparecido e abra o eclipse.
+## Instale o software necessário
+1 - Baixe e instale a JDK.
 
-3. Importe o projeto
+Configure a variável JAVA_HOME para que o sistema operacional saiba onde a JDK foi instalada.
+https://www.youtube.com/watch?v=_RlftGYiAn8
 
-<img src="https://i.imgur.com/ELOCwXN.png" />
+2 - Baixe e installe o MySQL
+Sugiro usar o seguinte instalador, pois tem todas as features necessárias, é simples e leve.
+https://s3.amazonaws.com/devel.gourmex/malara/software/mysql.msi
 
-4. Selecione `Existing Gradle Project` e configure para o seu diretório do projeto dentro do workspace.
+Durante a instalação vai ser solicitada a senha do usuário root. Digite 1234.
 
-5. Certifique que a importação ocorreu com sucesso, vá até a pasta onde seu projeto está (Por padrão é a pasta workspace)
-e coloque o TomCat dentro da mesma
-    - workspace
-        - starter
-        - apache-tomcat-9.0.30 (Obs mantenha o nome original da pasta do tomcat)
+3 - Baixe e instale o IntelliJ
+Pode ser a versão Community mesmo
 
-6. Dentro do eclipse crie um novo `server` e selecione o tomcat 9.0, utilizando como base o tomcat
-dentro do seu workspace (pasta) e adicione o projeto `starter` no server.
+4 - Instale o plugin do Lombok que irá gerar o código para getters and setters desse projeto.
 
-7. Com a criação do server finalizada, basta inicializa-lo =)
+![Plugin do lombok 1](https://i.imgur.com/broonxp.png)
 
+![Plugin do lombok 2](https://i.imgur.com/iHFUVpL.png)
+
+
+5 - Abra o projeto no IntelliJ
+
+![Abrir projeto 1](https://i.imgur.com/OcspGsn.png)
+
+![Abrir projeto 2](https://i.imgur.com/x44DhVe.png)
+Aguarde alguns minutos para o IntelliJ importar as bibliotecas (dependencias) necessarias
+
+6 - Crie o database e a tabela no MySQL
+
+![Abrir script](https://i.imgur.com/gPJQfFL.png)
+
+![Abrir MySql client](https://i.imgur.com/1Ffhsp8.png)
+
+![Executar o script](https://i.imgur.com/Sz0DbdH.png)
+
+7 - Executar o projeto
+
+Usando o Gradle, inicialize o projeto
+
+![inicializar](https://i.imgur.com/sxEFM48.png)
+
+Se a inicialização funcionou você deve ver o log assim
+
+![Log](https://i.imgur.com/ykb9lcc.png)
+
+### Resolução de problemas
+
+Caso o tomcat nao inicialize, procure os processos da Open JDK e finalize eles.
+
+![Erro de inicializacao do tomcat](https://i.imgur.com/NgdbsLQ.png)
