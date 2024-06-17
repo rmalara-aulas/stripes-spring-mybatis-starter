@@ -24,7 +24,7 @@ public class ContatoActionBean extends BaseActionBean {
     @Setter
     @ValidateNestedProperties({
         @Validate(field = "nome", required = true, on = "salvar", maxlength = 100),
-        @Validate(field = "telefone", required = true, on = "salvar", maxlength = 30),
+        @Validate(field = "telefone", required = true, on = "salvar", maxlength = 30, minlength = 10),
         @Validate(field = "estadoCivil", required = true, on = "salvar")
 
     })
