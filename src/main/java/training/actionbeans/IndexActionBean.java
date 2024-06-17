@@ -6,7 +6,7 @@ import net.sourceforge.stripes.action.ForwardResolution;
 import net.sourceforge.stripes.action.Resolution;
 import net.sourceforge.stripes.action.UrlBinding;
 import net.sourceforge.stripes.integration.spring.SpringBean;
-import training.mapper.ExampleMapper;
+import training.mapper.ContatoMapper;
 
 /**
  * Página principal do sistema.
@@ -21,14 +21,15 @@ public class IndexActionBean extends BaseActionBean {
     private final static String ERROR_JSP = "/WEB-INF/jsp/error.jsp";
 
     @SpringBean
-    private ExampleMapper exampleMapper;
+    private ContatoMapper contatoMapper;
 
     @DefaultHandler
     public Resolution index() {
-        if (exampleMapper == null) {
-            addSimpleErrorMessage("Teste de sanidade do projeto: exampleMapper nao foi injetado na action");
+        if (contatoMapper == null) {
+            addSimpleErrorMessage("Teste de sanidade do projeto: contatoMapper nao foi injetado na action");
             return new ForwardResolution(ERROR_JSP);
         }
+
         return new ForwardResolution(VIEW_INDEX);
     }
 

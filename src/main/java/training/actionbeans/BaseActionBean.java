@@ -37,7 +37,7 @@ public abstract class BaseActionBean implements ActionBean {
      * @param parameter
      *          parametros (opcional).
      */
-    protected void addMessage(String msg, Object... parameter) {
+    protected void addSimpleMessage(String msg, Object... parameter) {
         getContext().getMessages().add(new SimpleMessage(msg, parameter));
     }
 }

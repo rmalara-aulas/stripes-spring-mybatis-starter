@@ -9,3 +9,4 @@
 <%@ taglib prefix="display" uri="http://displaytag.sf.net" %>
 <%@ taglib prefix="s" uri="http://stripes.sourceforge.net/stripes-dynattr.tld" %>
 
+<c:set var="contextPath" value="${pageContext.request.contextPath}" />
